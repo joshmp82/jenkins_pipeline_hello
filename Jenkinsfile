@@ -9,6 +9,14 @@ node {
     }
 }
 stage('Get approval'){
+    input "Deploy to prod?"
+}
+node {
+    stage('deploy to prod'){
+        echo "deploying"
+    }
+}
+stage('Get approval'){
     input "Deploy to qa?"
 }
 node {
